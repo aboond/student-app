@@ -26,7 +26,7 @@ Route::get('/hello/{name}', function (string $name) {
 });
 
 
-Route::resource('students', StudentController::class);
+Route::resource('students', StudentController::class)->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/students/delete/{id}',[StudentController::class, 'delete'])->name('students.delete');
